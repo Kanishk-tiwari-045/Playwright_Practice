@@ -26,6 +26,7 @@ test.describe('Produktiv Signin Test Suite', () => {
 
     // Wait for navigation to Microsoft OAuth
     await page.waitForURL(/login\.microsoftonline\.com/);
+    await page.waitForLoadState('networkidle');
 
     // Microsoft Sign-In Flow
     await handleMicrosoftSignIn(page, email, password);
